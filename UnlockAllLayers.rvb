@@ -1,0 +1,18 @@
+﻿Option Explicit
+'Script written by <Junichiro Horikawa>
+'Script copyrighted by <Junichiro Horikawa>
+'Script version 2011年8月31日 15:53:02
+
+Call Main()
+Sub Main()
+	Dim strLayer, arrLayers
+	
+	Rhino.EnableRedraw(False)
+	
+	arrLayers = Rhino.LayerNames
+	For Each strLayer In arrLayers
+		Rhino.LayerLocked strLayer, False
+	Next
+	
+	Rhino.EnableRedraw(true)
+End Sub
